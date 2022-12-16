@@ -1,5 +1,5 @@
 # ella specific
-.pdf
+*.pdf
 
 # macOS 
 *.DS_Store
