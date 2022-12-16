@@ -1,2 +1,2 @@
-data_train = pd.read_csv('dataset/Chapter 4/[UCI] AAAI-14 Accepted Papers - Papers.csv')
+data_train = pd.read_csv('datasets/Chapter 4/[UCI] AAAI-14 Accepted Papers - Papers.csv')
 data_train = data_train[['title', 'groups', 'keywords', 'topics']]

@@ -1,2 +1,2 @@
-data = pd.read_csv('dataset/Chapter 5/No-show-Issue-Comma-300k.csv')
+data = pd.read_csv('datasets/Chapter 5/No-show-Issue-Comma-300k.csv')
 data.head()
