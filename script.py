@@ -1,26 +1,13 @@
 '''
-Book has 5 chapters under 'Book/Chapter # files'.
-For each chapter, get all files' contents from *.txt as snippet to dict entry
-Path to all files in pattern: 'Book/Chapter # files/Listings'
-Write each snippet as nbformat code cell:
+- Book has 5 chapters under 'Book/Chapter # files'.
+- For each chapter, get all files' contents from *.txt as snippet to dict entry
+- Path to all files in pattern: 'Book/Chapter # files/Listings'
+- Write each snippet as nbformat code cell:
     nbformat.v4.new_code_cell(source='', **kwargs)
         Create a new code cell
-Save to chapter#.ipynb
-Do I need to create a data class of nbformat's components for cell blocks?
-    {
-    "cell_type" : "code",
-    "execution_count": 1, # integer or null
-    "metadata" : {
-        "collapsed" : True, # whether the output of the cell is collapsed
-        "scrolled": False, # any of true, false or "auto"
-    },
-    "source" : "[some multi-line code]",
-    "outputs": [{
-        # list of output dicts (described below)
-        "output_type": "stream",
-        ...
-    }],
-    }
+- Path to datasets differs in git repo from actual snippet in Book
+- Snippets are written in Python 2, utilize a package to auto-convert to Python 3
+- Save to chapter#.ipynb
 '''
 import os
 import nbformat as nbf
@@ -30,19 +17,19 @@ def main():
 
     PATH = 'Book/Chapter 1 files/Listings/'  # const to test out initial code
     # print("getcwd", os.getcwd())
-    print("Length of BOOK PATH dir", len(os.listdir(BOOK_PATH)))
+    # print("Length of BOOK PATH dir", len(os.listdir(BOOK_PATH)))
     file_list = get_sorted_file_list(BOOK_PATH)
-    print(file_list)
-    print("COUNT of dirs in BOOK PATH", len(file_list))
+    # print(file_list)
+    # print("COUNT of dirs in BOOK PATH", len(file_list))
 
     for count in range(len(file_list)):
     
-        print("COUNT: ", count)
+        # print("COUNT: ", count)
         cur_dir = file_list[count]
-        print("Current Dir:", cur_dir)
+        # print("Current Dir:", cur_dir)
         
         chapter_num = cur_dir[8:9]
-        print("Chapter_num: ", chapter_num)
+        # print("Chapter_num: ", chapter_num)
         
         # rename_files(path_left+chapter_num+path_right)
 
@@ -69,22 +56,22 @@ def rename_files(dir):
     for file in os.listdir(dir):
         
         if file.endswith(".txt"):
-            print(file)
+            # print(file)
             new_name = file.removeprefix("Listing 1-")
             os.rename(dir+file, dir+new_name)
             print(file)
 
 
 def extract_contents_from_files(num):
-    print()
-    print("-- extract_contents_from_files(num) --")
+    # print()
+    # print("-- extract_contents_from_files(num) --")
     text = {}
     path_left = 'Book/Chapter '              # for actual looping
     path_right = ' files/Listings/' 
     cur_path = path_left+num+path_right
-    print("PATH:", cur_path)
+    # print("PATH:", cur_path)
     file_list = get_sorted_file_list(cur_path)
-    print("SORTED", file_list)
+    # print("SORTED", file_list)
 
     for file in file_list:
         try:
@@ -100,8 +87,6 @@ def extract_contents_from_files(num):
     return text
 
 def write_to_Jupyter_notebook(num , contents):
-
-    print("\n\nwrite_to_Jupyter_notebook\nNUM", num)
 
     chapter = "Chapter " + num
 
@@ -128,7 +113,8 @@ def write_to_Jupyter_notebook(num , contents):
 
 
     # write the above notebook object to a .ipynb file.
-    nbf.write(nb, "chapter" + num + ".ipynb")
+    nbf.write(nb, "chapter" + num + ".ipynb", 4)
+    print(f"\nwrite_to_Jupyter_notebook\t## Chapter {num} ##")
 
 
 
