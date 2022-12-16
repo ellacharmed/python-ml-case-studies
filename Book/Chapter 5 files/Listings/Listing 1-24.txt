@@ -1,12 +1,12 @@
 def model_performance(model_name, X_train, y_train, y_test, Y_pred):
 
-    print 'Model name: %s'%model_name
-    print 'Test accuracy (Accuracy Score): %f'%metrics.accuracy_score(y_test, Y_pred)
-    print 'Test accuracy (ROC AUC Score): %f'%metrics.roc_auc_score(y_test, Y_pred)
-    print 'Train accuracy: %f'%clf.score(X_train, y_train)
+    print('Model name: %s'%model_name)
+    print('Test accuracy (Accuracy Score): %f'%metrics.accuracy_score(y_test, Y_pred))
+    print('Test accuracy (ROC AUC Score): %f'%metrics.roc_auc_score(y_test, Y_pred))
+    print('Train accuracy: %f'%clf.score(X_train, y_train))
 
     fpr, tpr, thresholds = metrics.precision_recall_curve(y_test, Y_pred)
-    print 'Area Under the Precision-Recall Curve: %f'%metrics.auc(fpr, tpr)
+    print('Area Under the Precision-Recall Curve: %f'%metrics.auc(fpr, tpr))
     
     false_positive_rate, true_positive_rate, thresholds = metrics.roc_curve(y_test, Y_pred)
     roc_auc = metrics.auc(false_positive_rate, true_positive_rate)

@@ -1,7 +1,7 @@
 matrix, x_cols = matrix_from_df(data_train)
 X = matrix[x_cols]
 
-K = range(1,50)
+K = list(range(1,50))
 KM = [KMeans(n_clusters=k).fit(X) for k in K]
 centroids = [k.cluster_centers_ for k in KM]
 

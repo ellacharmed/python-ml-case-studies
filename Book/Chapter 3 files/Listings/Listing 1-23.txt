@@ -1,1 +1,1 @@
-print results_ARIMA_111.aic
+print(results_ARIMA_111.aic)

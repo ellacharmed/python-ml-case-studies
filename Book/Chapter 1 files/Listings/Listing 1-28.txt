@@ -8,7 +8,7 @@ random.shuffle(daily_tickets)
 plt.figure(figsize=(15,7))
 binrange=np.array(np.linspace(0,700,101))
 
-for i in xrange(1000):
+for i in range(1000):
     if daily_tickets:
         sample_tickets.append(daily_tickets.pop())
 

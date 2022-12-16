@@ -1,4 +1,4 @@
-features_of_choice = [u'Age', u'Gender', 'DayOfTheWeek', 'Diabetes', 'Alcoolism', 'HiperTension',
+features_of_choice = ['Age', 'Gender', 'DayOfTheWeek', 'Diabetes', 'Alcoolism', 'HiperTension',
                         'Smokes', 'Scholarship', 'Tuberculosis', 'Sms_Reminder',
                         'AwaitingTime', 'AppointmentRegistration_year', 'AppointmentRegistration_month',
                         'AppointmentRegistration_day', 'ApointmentData_year', 'ApointmentData_month',

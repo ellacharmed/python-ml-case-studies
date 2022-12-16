@@ -1,7 +1,7 @@
 matrix, x_cols = matrix_from_df(data_train)
 X  = matrix[x_cols].as_matrix()
 model_stats = []
-n_components_range = range(2, 10)
+n_components_range = list(range(2, 10))
 cv_types = ['spherical', 'tied', 'full']
 for cv_type in cv_types:
     for n_components in n_components_range:

@@ -11,4 +11,4 @@ regr = GradientBoostingRegressor()
 # Train the model using the training sets
 regr.fit(x_train, y_train)
 cs_pred = regr.predict(ca_new_data)
-print 'Predicted value of concrete strength: %f'%cs_pred
+print('Predicted value of concrete strength: %f'%cs_pred)

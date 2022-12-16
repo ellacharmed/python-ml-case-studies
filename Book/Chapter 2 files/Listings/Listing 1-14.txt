@@ -23,7 +23,7 @@ for feature in ['cement_component', 'flay_ash', 'water_component', 'superplastic
     plt.xlabel(feature.replace('_',' ').title())
     plt.ylabel('Concrete strength')
 
-    print feature, r2_score(y_test, y_pred)
+    print(feature, r2_score(y_test, y_pred))
     
     plot_count+=1
         
